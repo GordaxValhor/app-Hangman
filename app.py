@@ -3,3 +3,4 @@
 #functile de verificare,schimbare si afisare cuvant
 #introducere numar cuvant si verificare a lui
 #git first try
+print('Poate')
