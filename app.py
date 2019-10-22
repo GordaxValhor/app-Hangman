@@ -1,10 +1,13 @@
 #initializari
+
 nr_cuv = []
 cuv_cu = []
 cuv_ne = []
 cuv_des = []
 alfabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
 #citire din fisier csv
+
 import csv
 with open('cuvinte_de_verificat.csv') as csvfile:
     dateCSV = csv.reader(csvfile, delimiter=';')
@@ -15,6 +18,7 @@ with open('cuvinte_de_verificat.csv') as csvfile:
         nr_cuv.append(nr)
         cuv_cu.append(cu)
         cuv_ne.append(ne)
+
 #functile de verificare,schimbare si afisare cuvant
 
 
@@ -31,7 +35,9 @@ def numar_incercari_lit(i,n):
             nr_incercari+=1
             return(nr_incercari)
         nr_incercari+=1
-#introducere numar cuvant si verificare a lui
+
+#rezolvarea cuvintelor si afisearea lor cat si a numarului de incercari necesare
+
 numar_total_incercari = 0
 numar = 0
 for cuv in cuv_ne:
