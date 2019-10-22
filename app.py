@@ -1,9 +1,8 @@
 #initializari
 
-nr_cuv = []
-cuv_cu = []
-cuv_ne = []
-cuv_des = []
+nr_cuv = [] #array cu numar cuvinte
+cuv_cu = [] #array cuvinte cunoscute
+cuv_ne = [] #array cuvinte necunoscute
 alfabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 #citire din fisier csv
@@ -26,7 +25,6 @@ def verificare_lit(i,n):
     for litera in alfabet:
         if(litera==cuv_cu[n][i]):
             return(litera)
-
 
 def numar_incercari_lit(i,n):
     nr_incercari = 0
@@ -59,5 +57,4 @@ for cuv in cuv_ne:
     numar_total_incercari = numar_total_incercari + (int(nr_ic_cuv))
     numar+=1
 print('Numar total de incercari:',numar_total_incercari)
-#git first try
 
