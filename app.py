@@ -16,21 +16,42 @@ with open('cuvinte_de_verificat.csv') as csvfile:
         cuv_cu.append(cu)
         cuv_ne.append(ne)
 #functile de verificare,schimbare si afisare cuvant
+
+
 def verificare_lit(i,n):
     for litera in alfabet:
         if(litera==cuv_cu[n][i]):
             return(litera)
 
-#introducere numar cuvant si verificare a lui
-numar = input('introduceti numarul cuvantului:')
-numar=int(numar)
 
-index = 0
-for lit in cuv_ne[numar]:
-    if(lit=='*'):
-        lit = verificare_lit(index,numar)
-        cuv_ne[numar][index]=lit
-        print(cuv_ne[numar])
-    index +=1
+def numar_incercari_lit(i,n):
+    nr_incercari = 0
+    for litera in alfabet:
+        if(litera==cuv_cu[n][i]):
+            nr_incercari+=1
+            return(nr_incercari)
+        nr_incercari+=1
+#introducere numar cuvant si verificare a lui
+numar_total_incercari = 0
+numar = 0
+for cuv in cuv_ne:
+    index = 0
+    nr_ic_cuv = 0
+    print(cuv_ne[numar])
+    for lit in cuv:
+            if lit == '*':
+                new_lit = verificare_lit(index, numar)
+                nr_ic_lit = numar_incercari_lit(index, numar)
+                list_cuv_ne = list(cuv_ne[numar])
+                list_cuv_ne[index] = new_lit
+                cuv_ne[numar] = "".join(map(str, list_cuv_ne))
+            index += 1
+            nr_ic_cuv=nr_ic_cuv + nr_ic_lit
+    print('incercari cuv:',nr_ic_cuv)
+    print(cuv_cu[numar])
+    print('\n')
+    numar_total_incercari = numar_total_incercari + (int(nr_ic_cuv))
+    numar+=1
+print('Numar total de incercari:',numar_total_incercari)
 #git first try
 
