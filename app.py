@@ -3,7 +3,6 @@
 nr_cuv = [] #array cu numar cuvinte
 cuv_cu = [] #array cuvinte cunoscute
 cuv_ne = [] #array cuvinte necunoscuteCBDPRLFMNSTV
-alfabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 vocale='EAOIU'
 consoane='BCDFGHLMNPRSTVJKQWXYZ'
 consoane_uz='CBDPRLFMNTSV'
@@ -23,50 +22,6 @@ with open('cuvinte_de_verificat.csv') as csvfile:
         cuv_ne.append(ne)
 
 #functile de verificare,schimbare si afisare cuvant
-
-"""def verificare_lit(i,n):
-    if(cuv_ne[n][i-1] in vocale):
-        for consoana in consoane:
-            if(consoana==cuv_cu[n][i]):
-                return(consoana)
-        for vocala in vocale:
-            if(vocala==cuv_cu[n][i]):
-                return(vocala)
-    else:
-        for vocala in vocale:
-            if(vocala==cuv_cu[n][i]):
-                return(vocala)
-        for consoana in consoane:
-            if(consoana==cuv_cu[n][i]):
-                return(consoana)
-"""
-"""def numar_incercari_lit(i,n):
-    nr_incercari = 0
-    if(cuv_ne[n][i-1] in vocale):
-        for consoana in consoane:
-            if(consoana==cuv_cu[n][i]):
-                nr_incercari+=1
-                return(nr_incercari)
-            nr_incercari+=1
-        for vocala in vocale:
-            if(vocala==cuv_cu[n][i]):
-                nr_incercari+=1
-                return(nr_incercari)
-            nr_incercari+=1
-    else:
-        for vocala in vocale:
-            if(vocala==cuv_cu[n][i]):
-                nr_incercari+=1
-                return(nr_incercari)
-            nr_incercari+=1
-        for consoana in consoane:
-                if(consoana==cuv_cu[n][i]):
-                    nr_incercari+=1
-                    return(nr_incercari)
-                nr_incercari+=1
-    #nr_incercari+=1
-"""
-#try new
 
 def verificare_lit(i,n):
     if(cuv_ne[n][i-1] in vocale):
@@ -140,44 +95,6 @@ def numar_incercari_lit(i,n):
                 nr_incercari+=1
                 return(nr_incercari)
             nr_incercari+=1
-    #nr_incercari+=1
-#noua eficientizare
-
-"""def verificare_lit(i,n):
-    for vocala in vocale:
-        if(vocala==cuv_cu[n][i]):
-            return(vocala)
-    for consoana in consoane_uz:
-        if(consoana==cuv_cu[n][i]):
-             return(consoana)
-    for consoana in consoane_neuz:
-        if(consoana==cuv_cu[n][i]):
-             return(consoana)
-    for consoana in consoane_neneuz:
-        if(consoana==cuv_cu[n][i]):
-             return(consoana)
-def numar_incercari_lit(i,n):
-    nr_incercari = 0
-    for vocala in vocale:
-        if(vocala==cuv_cu[n][i]):
-            nr_incercari+=1
-            return(nr_incercari)
-        nr_incercari+=1
-    for consoana in consoane_uz:
-        if(consoana==cuv_cu[n][i]):
-             nr_incercari+=1
-             return(nr_incercari)
-        nr_incercari+=1
-    for consoana in consoane_neuz:
-        if(consoana==cuv_cu[n][i]):
-             nr_incercari+=1
-             return(nr_incercari)
-        nr_incercari+=1
-    for consoana in consoane_neneuz:
-        if(consoana==cuv_cu[n][i]):
-             nr_incercari+=1
-             return(nr_incercari)
-        nr_incercari+=1"""
 
 #rezolvarea cuvintelor si afisearea lor cat si a numarului de incercari necesare
 
