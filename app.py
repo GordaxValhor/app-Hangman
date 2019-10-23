@@ -8,6 +8,7 @@ consoane='BCDFGHLMNPRSTVJKQWXYZ'
 consoane_uz='CBDPRLFMNTSV'
 consoane_neuz='GHJK'
 consoane_neneuz='XZYQW'
+
 #citire din fisier csv
 
 import csv
